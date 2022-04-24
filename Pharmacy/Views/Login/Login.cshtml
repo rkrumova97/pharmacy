@@ -1,0 +1,36 @@
+﻿@model User
+
+@{
+    Layout = "";
+}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="~/css/style.css" rel="stylesheet" />
+
+    <link href="~/css/Login.css" rel="stylesheet">
+</head>
+<body class="text-center">
+    <form class="form-signin" method="post">
+        <img class="mb-4" src="/docs/4.3/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+        <div class="form-group">
+            <label asp-for="@Model.Username" class="control-label"></label>
+            <input asp-for="@Model.Username" class="form-control" required />
+            <span asp-validation-for="@Model.Username" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="@Model.Password" class="control-label"></label>
+            <input asp-for="@Model.Password" class="form-control" type="password" required />
+            <span asp-validation-for="@Model.Password" class="text-danger"></span>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <p class="mt-5 mb-3 text-muted">&copy; 2017-2019</p>
+    </form>
+</body>
+</html>
