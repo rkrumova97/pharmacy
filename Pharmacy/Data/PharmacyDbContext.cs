@@ -1,16 +1,12 @@
-﻿using Duende.IdentityServer.EntityFramework.Options;
-using Microsoft.AspNetCore.ApiAuthorization.IdentityServer;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
+﻿using Microsoft.EntityFrameworkCore;
 using Pharmacy.Models;
 
 namespace Pharmacy.Data
 {
-    public class PharmacyDbContext : ApiAuthorizationDbContext<ApplicationUser>
+    public class PharmacyDbContext : DbContext
     {
         public PharmacyDbContext(DbContextOptions options) : base(options)
         {
-
         }
         public DbSet<Medicine> Medicines { get; set; }
         public DbSet<Carousel> Carousels { get; set; }

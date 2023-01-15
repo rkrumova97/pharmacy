@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace Pharmacy.Models
 {
-    public class ApplicationUser : IdentityUser
+    public class ApplicationUser 
     {
         [Required]
         public int Id { get; set; }

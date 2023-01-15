@@ -9,17 +9,17 @@
 <hr />
 <div class="container">
     <div class="row">
-        @if (Model?.BookToOrder.Id >= 0)
+        @if (Model?.MedicineToOrder.Id >= 0)
         {
         <div class="col-md-10">
-            <h5>You have selected the following book.</h5>
+            <h5>You have selected the following medicine.</h5>
             <div class="row">
                 <div class="col-md-4">
-                    <h5> @Model.BookToOrder.Title</h5>
-                    <img src="~/Images/@Model.BookToOrder.Image"/>
+                    <h5> @Model.MedicineToOrder.Title</h5>
+                    <img src="~/Images/@Model.MedicineToOrder.Image"/>
                 </div>
                 <div class="col-md-4">
-                    <h4>Price: @Model.BookToOrder.Price $</h4>
+                    <h4>Price: @Model.MedicineToOrder.Price $</h4>
                 </div>
             </div>
         </div>
@@ -69,7 +69,7 @@
         }
         else
         {
-            <div><p>You haven't selected a book!</p></div>
+            <div><p>You haven't selected a medicine!</p></div>
         }
     </div>
 

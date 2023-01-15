@@ -1,13 +1,13 @@
-﻿@model IEnumerable<BookShop.Models.Book>
+﻿@model IEnumerable<Pharmacy.Models.Medicine>
 
 @{
-    ViewData["Title"] = "BookList";
+    ViewData["Title"] = "MedicineList";
 }
 
-<h2>The list of Books: </h2>
+<h2>The list of Medicines: </h2>
 
 <p>
-    <a href="/home/addbook">Create New</a>
+    <a href="/home/addmedicine">Create New</a>
 </p>
 <table class="table">
     <thead>
@@ -22,10 +22,10 @@
                 @Html.DisplayNameFor(model => model.Description)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Author)
+                @Html.DisplayNameFor(model => model.Ingredients)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.PublishDate)
+                @Html.DisplayNameFor(model => model.ExpirationDate)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Price)
@@ -50,10 +50,10 @@
                     @Html.DisplayFor(modelItem => item.Description)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Author)
+                    @Html.DisplayFor(modelItem => item.Ingredients)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.PublishDate)
+                    @Html.DisplayFor(modelItem => item.ExpirationDate)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Price)

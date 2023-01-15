@@ -1,10 +1,10 @@
-﻿@model IEnumerable<BookShop.Models.Order>
+﻿@model IEnumerable<Pharmacy.Models.Order>
 
 @{
     ViewData["Title"] = "OrderList";
 }
 
-<h2>Book List</h2>
+<h2>Medicine List</h2>
 
 <p>
     <a href="/home/index">Create New</a>
@@ -13,7 +13,7 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.BookId)
+                @Html.DisplayNameFor(model => model.MedicineId)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.ClientName)
@@ -43,7 +43,7 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.BookId)
+                @Html.DisplayFor(modelItem => item.MedicineId)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.ClientName)

@@ -11,14 +11,12 @@ namespace Pharmacy.Controllers
 {
     public class HomeController : Controller
     {
-        //List<Book> _book;
         IRepository<Order> _orderRepo;
         IRepository<Medicine> _medicineRepo;
         IRepository<Carousel> _CarouselRepo;
 
         public HomeController(IRepository<Medicine> medicine, IRepository<Carousel> carousel, IRepository<Order> order)
         {
-            //_book = new List<Book>();
             _medicineRepo = medicine;
             _CarouselRepo = carousel;
             _orderRepo = order;
@@ -36,13 +34,13 @@ namespace Pharmacy.Controllers
         }
 
         [HttpGet]
-        public IActionResult AddBook()
+        public IActionResult AddMedicine()
         {
             return View();
         }
 
         [HttpPost]
-        public IActionResult AddBook(Medicine medicine)
+        public IActionResult AddMedicine(Medicine medicine)
         {
             if (ModelState.IsValid)
             {
@@ -135,7 +133,7 @@ namespace Pharmacy.Controllers
         {
             return View(_orderRepo.GetAll());
         }
-        public IActionResult BookList(int id)
+        public IActionResult MedicineList(int id)
         {
             return View(_medicineRepo.GetAllByCarousel(id));
         }

@@ -16,15 +16,15 @@ namespace LittlePacktPharmacy.Services
 			_carousels.Add(new Carousel()
 			{
 				Id = 0,
-				Title = "Discount books",
-				Description = "Discount books get them all",
+				Title = "Discount medicines",
+				Description = "Discount medicines get them all",
 				ImageURL = "~/Images/images (1).jpg"
             });
 			_carousels.Add(new Carousel()
 			{
 				Id = 2,
-				Title = "New books",
-				Description = "All brand new books ",
+				Title = "New medicines",
+				Description = "All brand new medicines ",
 				ImageURL = "~/Images/images (3).jpg"
             });
 			_carousels.Add(new Carousel()

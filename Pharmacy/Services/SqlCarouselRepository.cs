@@ -33,8 +33,8 @@ namespace Pharmacy.Services
         {
             try
             {
-                Carousel book = Get(Item.Id);
-                if (book != null)
+                Carousel medicine = Get(Item.Id);
+                if (medicine != null)
                 {
                     _context.Remove(Item);
                     _context.SaveChanges();
