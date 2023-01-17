@@ -55,7 +55,7 @@ namespace Pharmacy.Controllers
                     CarouselId = 1
                 };
                 _medicineRepo.Add(item);
-                return RedirectToAction("MedicineList");
+                return RedirectToAction("medicinelist");
 
             }
             else
@@ -139,6 +139,43 @@ namespace Pharmacy.Controllers
         public IActionResult MedicineList(int id)
         {
             return View(_medicineRepo.GetAllByCarousel(id));
+        }
+
+        public IActionResult EditMedicine(int id)
+        {
+            return View(_medicineRepo.Get(id));
+        }
+
+        [HttpPost]
+        public IActionResult EditMedicine(Medicine medicine)
+        {
+            if (ModelState.IsValid)
+            {
+                Medicine existingMedicine = _medicineRepo.Get(medicine.Id);
+                if (existingMedicine != null)
+                {
+                    existingMedicine.Title = medicine.Title;
+                    existingMedicine.Description = medicine.Description;
+                    existingMedicine.Ingredients = medicine.Ingredients;
+                    existingMedicine.ExpirationDate = medicine.ExpirationDate;
+                    existingMedicine.Image = medicine.Image;
+                    existingMedicine.Price = medicine.Price;
+                    _medicineRepo.Edit(existingMedicine);
+                }
+                return RedirectToAction("medicinelist/" + existingMedicine.CarouselId);
+            }
+            else
+            {
+                return View();
+            }
+        }
+
+        [HttpPost]
+        public IActionResult Delete(int id)
+        {
+            Medicine existingMedicine = _medicineRepo.Get(id);
+            _medicineRepo.Delete(existingMedicine);
+            return RedirectToAction("medicinelist/" + existingMedicine.CarouselId);
         }
 
         public IActionResult Login()

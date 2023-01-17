@@ -51,7 +51,16 @@ namespace Pharmacy.Services
 
         public bool Edit(Medicine item)
         {
-            throw new NotImplementedException();
+            try
+            {
+                _context.Update(item);
+                _context.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
 
         public Medicine Get(int id)

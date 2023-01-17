@@ -65,7 +65,7 @@
                     <a href="/home/editmedicine/@item.Id">Edit</a> |
                 </td>
                 <td>
-                    @using (Html.BeginForm("Delete/" + @item.Id, "Home"))
+                    @using (Html.BeginForm("delete/" + @item.Id, "Home"))
                     {
                         <input type="submit" value="Delete" class="btn btn-danger"/>
                     }
