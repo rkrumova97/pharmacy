@@ -20,11 +20,8 @@ namespace Pharmacy.Services
         {
             try
             {
-                _context.Database.ExecuteSqlCommand("SET IDENTITY_INSERT dbo.Medicines ON;"); 
                 _context.Add(item);
                 _context.SaveChanges();
-                _context.Database.ExecuteSqlCommand("SET IDENTITY_INSERT dbo.Medicines OFF;");
-
                 return true;
             }
             catch (Exception)

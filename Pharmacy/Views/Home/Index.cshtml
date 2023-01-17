@@ -3,22 +3,54 @@
     ViewData["Title"] = "Index";
 }
 
-@Html.Partial("_Carousel", Model.Carousels);
+<style>
+    .image-aboutus-banner {
+        background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url("https://images.pexels.com/photos/673649/pexels-photo-673649.jpeg?w=940&h=650&auto=compress&cs=tinysrgb");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        color: #fff;
+        padding-top: 110px;
+        padding-bottom: 110px;
+    }
 
- <div class="container marketing">
-
-    <!-- Three columns of text below the carousel -->
-     <div class="row">
-         @foreach (var item in Model.Medicines)
-         {
-             <div class="col-lg-4">
-                 <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="~/Images/@item.Image" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777" />
-                 <h5>@item.Title</h5>
-                 <p><a class="btn btn-secondary" href="/home/details/@item.Id">View details</a></p>
-             </div><!-- /.col-lg-4 -->
-         }
-     </div><!-- /.row -->
+    .image-aboutus-sm-banner {
+        background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url("https://images.pexels.com/photos/631008/pexels-photo-631008.jpeg?w=940&h=650&auto=compress&cs=tinysrgb");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        color: #fff;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+</style>
+<div class="image-aboutus-banner" style="margin-top:0px">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="lg-text">Medicines</h1>
+                <p class="image-aboutus-para">
+                    Here you can find all medicines that are in the pharmacy.
+                </p>
+            </div>
+        </div>
+    </div>
 </div>
 
+<div class="container marketing">
 
- 
+    <div class="row">
+        @foreach (var item in Model.Medicines)
+        {
+            <div class="col-lg-4">
+                <img class="bd-placeholder-img rounded-circle" width="140" height="200" src="~/Images/@item.Image" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777" />
+                <h5>@item.Title</h5>
+                <p><a class="btn btn-secondary" href="/home/details/@item.Id">View details</a></p>
+            </div>
+
+            <!-- /.col-lg-4 -->
+        }
+    </div><!-- /.row -->
+</div>
+
+@Html.Partial("_Carousel", Model.Carousels);

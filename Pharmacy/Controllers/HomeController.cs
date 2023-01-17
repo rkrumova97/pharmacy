@@ -46,14 +46,17 @@ namespace Pharmacy.Controllers
             {
                 Medicine item = new Medicine()
                 {
-                    Id = _medicineRepo.GetAll().Max(m => m.Id) + 1,
                     Title = medicine.Title,
                     Description = medicine.Description,
+                    Ingredients = medicine.Ingredients,
+                    ExpirationDate = medicine.ExpirationDate,
                     Price = medicine.Price,
-                    Image = medicine.Image
+                    Image = medicine.Image,
+                    CarouselId = 1
                 };
                 _medicineRepo.Add(item);
-                return RedirectToAction("Index");
+                return RedirectToAction("MedicineList");
+
             }
             else
             {
