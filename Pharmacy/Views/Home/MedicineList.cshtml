@@ -65,12 +65,8 @@
                     <a href="/home/editmedicine/@item.Id">Edit</a> |
                 </td>
                 <td>
-                    @using (Html.BeginForm("delete/" + @item.Id, "Home"))
-                    {
-                        <input type="submit" value="Delete" class="btn btn-danger"/>
-                    }
-                 </td>
-
+                    <a href="@Url.Action("delete", "home", new { id = item.Id })" onclick="return confirm('Are you sure you want to delete this item?');">Delete</a>
+                </td>
             </tr>
         }
     </tbody>
